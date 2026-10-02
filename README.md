@@ -197,12 +197,12 @@ I am a **Data Scientist & AI Engineer** with over 2 years of experience developi
 ## 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ChaituCR07&show_icons=true&theme=radical&hide_border=true&title_color=2E90FA&text_color=B0B8C4&icon_color=2E90FA&bg_color=0D1117" alt="Chaitanya's GitHub Stats" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ChaituCR07&layout=compact&theme=radical&hide_border=true&title_color=2E90FA&text_color=B0B8C4&bg_color=0D1117" alt="Top Languages" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api?username=ChaituCR07&show_icons=true&include_all_commits=true&count_private=true&theme=radical&hide_border=true&title_color=2E90FA&text_color=B0B8C4&icon_color=2E90FA&bg_color=0D1117&cache_seconds=1800" alt="Chaitanya's GitHub Stats" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ChaituCR07&layout=compact&theme=radical&hide_border=true&title_color=2E90FA&text_color=B0B8C4&bg_color=0D1117&cache_seconds=1800" alt="Top Languages" height="165" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ChaituCR07&theme=radical&hide_border=true&stroke=2E90FA&ring=2E90FA&fire=2E90FA&background=0D1117&currStreakLabel=2E90FA" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=ChaituCR07&theme=radical&hide_border=true&stroke=2E90FA&ring=2E90FA&fire=2E90FA&background=0D1117&currStreakLabel=2E90FA&sideLabels=FE428E&dates=A9FEF7&currStreakNum=F8D847&sideNums=FE428E&timezone=Asia/Kolkata" alt="GitHub Streak" />
 </div>
 
 ---
