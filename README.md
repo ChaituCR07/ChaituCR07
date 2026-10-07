@@ -1,15 +1,20 @@
 <div align="center">
 
-# 👨‍💻 Chaitanya Medam
-### **Data Scientist | AI Engineer | Machine Learning Researcher**
+<!-- 🌟 LinkedIn-Style Hero Cover Banner 🌟 -->
+<a href="https://linkedin.com/in/chaitanya-medam">
+  <img src="./assets/header_banner.svg" alt="Chaitanya Medam - LinkedIn Style Cover Banner" width="100%" />
+</a>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=2E90FA&center=true&vCenter=true&width=750&lines=Data+Scientist+%26+AI+Engineer;4x+IEEE+%26+Scopus+Published+Researcher;Computer+Vision+%26+Natural+Language+Processing;Automated+ETL+Pipelines+%26+Interactive+BI+Dashboards)](https://git.io/typing-svg)
+<br/>
+
+<!-- Dynamic Multi-Color Typing Animation -->
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=1000&color=00F2FE&center=true&vCenter=true&width=800&lines=%F0%9F%9A%80+Data+Scientist+%7C+AI+Engineer+%7C+ML+Researcher;%F0%9F%93%9A+Author+of+4x+IEEE+%26+Scopus+Indexed+Research+Papers;%F0%9F%A7%A0+Computer+Vision+%E2%80%A2+Deep+Learning+%E2%80%A2+NLP+%E2%80%A2+LLMs;%E2%9A%A1+Automated+ETL+Pipelines+%E2%80%A2+Power+BI+Dashboards)](https://git.io/typing-svg)
 
 <p align="center">
-  <a href="https://linkedin.com/in/chaitanya-medam"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="mailto:medamchaitanya321@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-  <a href="https://github.com/ChaituCR07"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
-  <img src="https://img.shields.io/badge/Location-Bangalore%2C%20India-555?style=for-the-badge&logo=google-maps&logoColor=white" alt="Location" />
+  <a href="https://linkedin.com/in/chaitanya-medam"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="mailto:medamchaitanya321@gmail.com"><img src="https://img.shields.io/badge/Email-Get%20in%20Touch-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="https://github.com/ChaituCR07"><img src="https://img.shields.io/badge/GitHub-ChaituCR07-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  <img src="https://img.shields.io/badge/Location-Bangalore%2C%20India-009688?style=for-the-badge&logo=google-maps&logoColor=white" alt="Location" />
 </p>
 
 ---
@@ -188,9 +193,9 @@ I am a **Data Scientist & AI Engineer** with over 2 years of experience developi
 
 - 🎓 **Master of Technology (Integrated) in Computer Science & Engineering**  
   *Vellore Institute of Technology (VIT), Vellore* | **CGPA: 7.94** (2025)
-- 📜 **Google Data Analytics Professional Certificate** — Coursera
+- 📜 **Google Data Analytics Professional Certificate** 
 - 📜 **Automation Anywhere RPA Professional**
-- 📜 **Complete Data Science Bootcamp** — 365 Careers
+- 📜 **Complete Data Science Bootcamp** 
 
 ---
 
