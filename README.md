@@ -226,6 +226,6 @@ I am always keen to discuss machine learning research, data engineering challeng
 
 ![Profile Views](https://komarev.com/ghpvc/?username=ChaituCR07&label=Profile%20Views&color=2E90FA&style=flat-square)
 
-⭐ *Feel free to explore my repositories — if you find something useful or interesting, give it a star!*
+⭐ *Feel free to explore my repositories — if you find something exiting or interesting, give it a star!*
 
 </div>
