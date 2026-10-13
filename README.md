@@ -199,15 +199,37 @@ I am a **Data Scientist & AI Engineer** with over 2 years of experience developi
 
 ---
 
-## 📊 GitHub Analytics
+## 📊 GitHub Analytics & Activity Momentum
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ChaituCR07&show_icons=true&include_all_commits=true&count_private=true&theme=radical&hide_border=true&title_color=2E90FA&text_color=B0B8C4&icon_color=2E90FA&bg_color=0D1117&cache_seconds=1800" alt="Chaitanya's GitHub Stats" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ChaituCR07&layout=compact&theme=radical&hide_border=true&title_color=2E90FA&text_color=B0B8C4&bg_color=0D1117&cache_seconds=1800" alt="Top Languages" height="165" />
-</div>
 
-<div align="center">
-  <img src="https://streak-stats.demolab.com/?user=ChaituCR07&theme=radical&hide_border=true&stroke=2E90FA&ring=2E90FA&fire=2E90FA&background=0D1117&currStreakLabel=2E90FA&sideLabels=FE428E&dates=A9FEF7&currStreakNum=F8D847&sideNums=FE428E&timezone=Asia/Kolkata" alt="GitHub Streak" />
+  <!-- 🔥 Animated Streak Momentum Banner -->
+  <a href="https://github.com/ChaituCR07">
+    <img src="./assets/streak_animation.svg" alt="Daily Streak Animation & Momentum" width="95%" />
+  </a>
+
+  <br/><br/>
+
+  <!-- GitHub Readme Stats & Top Languages -->
+  <img src="https://github-readme-stats.vercel.app/api?username=ChaituCR07&show_icons=true&include_all_commits=true&count_private=true&theme=radical&hide_border=true&title_color=38BDF8&text_color=94A3B8&icon_color=38BDF8&bg_color=0D1117&cache_seconds=1800" alt="Chaitanya's GitHub Stats" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ChaituCR07&layout=compact&theme=radical&hide_border=true&title_color=38BDF8&text_color=94A3B8&bg_color=0D1117&cache_seconds=1800" alt="Top Languages" height="165" />
+
+  <br/><br/>
+
+  <!-- GitHub Streak Stats Card with Enhanced Flame & Harmonized Colors -->
+  <a href="https://github.com/ChaituCR07">
+    <img src="https://streak-stats.demolab.com/?user=ChaituCR07&theme=radical&hide_border=true&stroke=21262D&ring=FF5E3A&fire=FF5E3A&background=0D1117&currStreakLabel=38BDF8&sideLabels=8B949E&dates=94A3B8&currStreakNum=FFAE00&sideNums=38BDF8&border_radius=10&timezone=Asia/Kolkata" alt="GitHub Streak Stats" />
+  </a>
+
+  <br/><br/>
+
+  <!-- 🐍 Animated Contribution Grid Snake Game -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/github-contribution-grid-snake.svg">
+    <img src="./assets/github-contribution-grid-snake-dark.svg" alt="Contribution Grid Snake Animation" width="95%" />
+  </picture>
+
 </div>
 
 ---

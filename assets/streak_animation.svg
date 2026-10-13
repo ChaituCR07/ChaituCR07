@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 140" width="100%" height="100%">
+  <defs>
+    <style>
+      @keyframes flameFlicker {
+        0%, 100% {
+          transform: scale(1) rotate(0deg);
+          filter: drop-shadow(0 0 8px rgba(255, 94, 58, 0.6));
+        }
+        25% {
+          transform: scale(1.06, 0.96) rotate(-1.5deg);
+          filter: drop-shadow(0 0 14px rgba(255, 140, 0, 0.8));
+        }
+        50% {
+          transform: scale(0.97, 1.05) rotate(1deg);
+          filter: drop-shadow(0 0 10px rgba(255, 69, 0, 0.7));
+        }
+        75% {
+          transform: scale(1.04, 0.98) rotate(-0.5deg);
+          filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.85));
+        }
+      }
+
+      @keyframes innerFlicker {
+        0%, 100% { transform: scale(1); opacity: 0.95; }
+        50% { transform: scale(0.92, 1.08); opacity: 0.75; }
+      }
+
+      @keyframes emberFloat1 {
+        0% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+        50% { transform: translate(-8px, -20px) scale(0.8); opacity: 0.7; }
+        100% { transform: translate(-14px, -42px) scale(0.2); opacity: 0; }
+      }
+
+      @keyframes emberFloat2 {
+        0% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+        50% { transform: translate(6px, -24px) scale(0.75); opacity: 0.8; }
+        100% { transform: translate(12px, -46px) scale(0.2); opacity: 0; }
+      }
+
+      @keyframes emberFloat3 {
+        0% { transform: translate(0, 0) scale(0.9); opacity: 0.8; }
+        50% { transform: translate(-3px, -18px) scale(0.6); opacity: 0.6; }
+        100% { transform: translate(-5px, -38px) scale(0.1); opacity: 0; }
+      }
+
+      @keyframes ringSpin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes shimmerBar {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(250%); }
+      }
+
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.85; }
+      }
+
+      .flame-group {
+        transform-origin: 65px 78px;
+        animation: flameFlicker 1.8s infinite ease-in-out;
+      }
+      .inner-flame {
+        transform-origin: 65px 82px;
+        animation: innerFlicker 1.2s infinite ease-in-out;
+      }
+      .ember-1 {
+        animation: emberFloat1 1.7s infinite ease-out;
+      }
+      .ember-2 {
+        animation: emberFloat2 2.1s infinite ease-out 0.4s;
+      }
+      .ember-3 {
+        animation: emberFloat3 1.9s infinite ease-out 0.8s;
+      }
+      .ring-rotate {
+        transform-origin: 65px 70px;
+        animation: ringSpin 12s infinite linear;
+      }
+      .pulse-glow {
+        animation: pulseGlow 2.5s infinite ease-in-out;
+      }
+      .shimmer-light {
+        animation: shimmerBar 3s infinite ease-in-out;
+      }
+      .mono-txt {
+        font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+      }
+      .sans-txt {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+    </style>
+
+    <!-- Gradients -->
+    <linearGradient id="streakBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="50%" stop-color="#161B22"/>
+      <stop offset="100%" stop-color="#090D14"/>
+    </linearGradient>
+
+    <radialGradient id="fireAura" cx="65px" cy="70px" r="85px" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF5E3A" stop-opacity="0.32"/>
+      <stop offset="45%" stop-color="#FF9500" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0D1117" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="flameOuterGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FF2E00"/>
+      <stop offset="40%" stop-color="#FF5E3A"/>
+      <stop offset="80%" stop-color="#FFAE00"/>
+      <stop offset="100%" stop-color="#FFE600"/>
+    </linearGradient>
+
+    <linearGradient id="flameInnerGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FF7A00"/>
+      <stop offset="60%" stop-color="#FFD600"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5E3A"/>
+      <stop offset="35%" stop-color="#FFAE00"/>
+      <stop offset="70%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+
+    <linearGradient id="shimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0)"/>
+      <stop offset="50%" stop-color="rgba(255, 255, 255, 0.45)"/>
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0)"/>
+    </linearGradient>
+
+    <clipPath id="progressBarClip">
+      <rect x="145" y="66" width="675" height="10" rx="5"/>
+    </clipPath>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="850" height="140" rx="12" fill="url(#streakBgGrad)" stroke="#30363D" stroke-width="1.2"/>
+
+  <!-- Warm Flame Aura Ambient Glow -->
+  <rect width="850" height="140" rx="12" fill="url(#fireAura)" class="pulse-glow"/>
+
+  <!-- Subtle Blueprint Grid Lines -->
+  <g stroke="rgba(255, 255, 255, 0.03)" stroke-width="1">
+    <line x1="145" y1="35" x2="820" y2="35"/>
+    <line x1="145" y1="105" x2="820" y2="105"/>
+    <line x1="370" y1="15" x2="370" y2="125"/>
+    <line x1="595" y1="15" x2="595" y2="125"/>
+  </g>
+
+  <!-- ==================== LEFT: ANIMATED STREAK FLAME EMBLEM ==================== -->
+  
+  <!-- Rotating Outer Dash Ring -->
+  <circle cx="65" cy="70" r="42" fill="none" stroke="#FF5E3A" stroke-opacity="0.35" stroke-width="1.8" stroke-dasharray="6 8" class="ring-rotate"/>
+  <circle cx="65" cy="70" r="34" fill="none" stroke="#FFAE00" stroke-opacity="0.25" stroke-width="1.2"/>
+
+  <!-- Rising Embers (Flying sparks) -->
+  <circle cx="62" cy="56" r="2.2" fill="#FFE600" class="ember-1"/>
+  <circle cx="70" cy="54" r="1.8" fill="#FF8C00" class="ember-2"/>
+  <circle cx="66" cy="50" r="1.5" fill="#FFAE00" class="ember-3"/>
+
+  <!-- Flickering Flame Vector -->
+  <g class="flame-group">
+    <!-- Outer Flame -->
+    <path d="M 65 34 C 65 34 76 46 76 58 C 76 65 72 70 76 77 C 78 81 74 89 69 91 C 67 92 63 92 61 91 C 56 89 52 81 54 77 C 58 70 54 65 54 58 C 54 46 65 34 65 34 Z" fill="url(#flameOuterGrad)"/>
+    
+    <!-- Mid Flame Core -->
+    <path d="M 65 44 C 65 44 72 54 72 63 C 72 68 69 72 71 78 C 72 81 69 86 65 86 C 61 86 58 81 59 78 C 61 72 58 68 58 63 C 58 54 65 44 65 44 Z" fill="url(#flameInnerGrad)" class="inner-flame"/>
+    
+    <!-- Inner White-Hot Flame -->
+    <ellipse cx="65" cy="75" rx="3.5" ry="7" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <!-- ==================== RIGHT CONTENT: STREAK STATS & DYNAMIC TRACK ==================== -->
+
+  <!-- Header Row: Title & Live Beacon -->
+  <g transform="translate(145, 24)">
+    <!-- Section Title -->
+    <text fill="#F0F6FC" class="sans-txt" font-size="14.5" font-weight="700" letter-spacing="0.3">
+      DAILY CODE MOMENTUM &amp; STREAK HABIT
+    </text>
+
+    <!-- Live Status Pill -->
+    <g transform="translate(350, -4)">
+      <rect width="180" height="22" rx="11" fill="#FF5E3A" fill-opacity="0.15" stroke="#FF5E3A" stroke-opacity="0.4" stroke-width="1"/>
+      <circle cx="12" cy="11" r="3.5" fill="#FF5E3A"/>
+      <text x="24" y="15" fill="#FFAE00" class="mono-txt" font-size="10" font-weight="700" letter-spacing="0.5">
+        STREAK ACTIVE • ON FIRE 🔥
+      </text>
+    </g>
+  </g>
+
+  <!-- Subtitle Narrative -->
+  <text x="145" y="56" fill="#8B949E" class="sans-txt" font-size="11.5">
+    Consistent daily engineering contributions across Machine Learning, Telemetry pipelines &amp; IEEE Research.
+  </text>
+
+  <!-- Dynamic Progress Bar -->
+  <g>
+    <!-- Track Background -->
+    <rect x="145" y="68" width="675" height="8" rx="4" fill="#21262D"/>
+    
+    <!-- Animated Gradient Fill Track -->
+    <rect x="145" y="68" width="675" height="8" rx="4" fill="url(#progressGrad)" clip-path="url(#progressBarClip)"/>
+    
+    <!-- Shimmer Light Gliding across the Bar -->
+    <rect x="145" y="68" width="180" height="8" fill="url(#shimmerGrad)" clip-path="url(#progressBarClip)" class="shimmer-light"/>
+  </g>
+
+  <!-- Bottom Metric Highlights -->
+  <g transform="translate(145, 96)">
+    <!-- Highlight 1: Habit -->
+    <g transform="translate(0, 0)">
+      <text fill="#FF5E3A" class="mono-txt" font-size="12" font-weight="700">⚡ DAILY DISCIPLINE</text>
+      <text y="18" fill="#C9D1D9" class="sans-txt" font-size="11">Code frequency &amp; daily rhythm</text>
+    </g>
+
+    <!-- Highlight 2: Momentum -->
+    <g transform="translate(230, 0)">
+      <text fill="#FFAE00" class="mono-txt" font-size="12" font-weight="700">📈 CONTINUOUS IMPACT</text>
+      <text y="18" fill="#C9D1D9" class="sans-txt" font-size="11">11+ Day streak record &amp; growing</text>
+    </g>
+
+    <!-- Highlight 3: Production Standard -->
+    <g transform="translate(460, 0)">
+      <text fill="#34D399" class="mono-txt" font-size="12" font-weight="700">🎯 QUALITY &amp; UPTIME</text>
+      <text y="18" fill="#C9D1D9" class="sans-txt" font-size="11">Tested code, papers &amp; pipelines</text>
+    </g>
+  </g>
+
+</svg>

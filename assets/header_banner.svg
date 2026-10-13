@@ -1,288 +1,400 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" height="100%">
   <defs>
-    <!-- Background Gradients -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0d14"/>
-      <stop offset="50%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#060911"/>
+    <!-- Fonts & Keyframe Animations -->
+    <style>
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes pulseDot {
+        0%, 100% { transform: scale(1); opacity: 0.95; }
+        50% { transform: scale(1.4); opacity: 0.45; }
+      }
+      @keyframes softFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
+      }
+      @keyframes borderGlow {
+        0%, 100% { stroke-opacity: 0.35; }
+        50% { stroke-opacity: 0.75; }
+      }
+      @keyframes subtleShimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(200%); }
+      }
+
+      .cursor {
+        animation: blink 1.05s infinite;
+      }
+      .pulse-beacon {
+        transform-origin: 22px 56px;
+        animation: pulseDot 2.2s infinite ease-in-out;
+      }
+      .float-card {
+        animation: softFloat 4s infinite ease-in-out;
+      }
+      .glow-border {
+        animation: borderGlow 3s infinite ease-in-out;
+      }
+      .mono-text {
+        font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, Monaco, monospace;
+      }
+      .sans-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, Helvetica, Arial, sans-serif;
+      }
+    </style>
+
+    <!-- Canvas Dot Grid Pattern -->
+    <pattern id="canvasDotGrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.1" fill="#94A3B8" fill-opacity="0.08"/>
+    </pattern>
+
+    <!-- Background Rich Dark Gradient -->
+    <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#070A12"/>
     </linearGradient>
 
-    <!-- Glowing Orbs Gradients -->
-    <radialGradient id="cyanGlow" cx="20%" cy="30%" r="50%">
-      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.35"/>
-      <stop offset="60%" stop-color="#4facfe" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#0a0d14" stop-opacity="0"/>
+    <!-- Ambient Lighting (Muted, warm & deep indigo - human, not neon) -->
+    <radialGradient id="indigoAmbient" cx="15%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.14"/>
+      <stop offset="55%" stop-color="#1D4ED8" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#0B0F19" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="purpleGlow" cx="85%" cy="30%" r="55%">
-      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.32"/>
-      <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#0a0d14" stop-opacity="0"/>
+    <radialGradient id="violetAmbient" cx="80%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.13"/>
+      <stop offset="50%" stop-color="#6D28D9" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#0B0F19" stop-opacity="0"/>
     </radialGradient>
 
-    <radialGradient id="emeraldGlow" cx="50%" cy="95%" r="45%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
-      <stop offset="60%" stop-color="#059669" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#0a0d14" stop-opacity="0"/>
+    <radialGradient id="emeraldAmbient" cx="40%" cy="90%" r="50%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.10"/>
+      <stop offset="60%" stop-color="#059669" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#0B0F19" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Text Gradients -->
-    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Clean Typography Gradients -->
+    <linearGradient id="textPrimaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="35%" stop-color="#E0F2FE"/>
-      <stop offset="70%" stop-color="#BAE6FD"/>
-      <stop offset="100%" stop-color="#38BDF8"/>
+      <stop offset="60%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
     </linearGradient>
 
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FDE047"/>
-      <stop offset="100%" stop-color="#F59E0B"/>
+    <linearGradient id="accentLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="40%" stop-color="#818CF8"/>
+      <stop offset="75%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#34D399"/>
     </linearGradient>
 
-    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#34D399"/>
-      <stop offset="100%" stop-color="#059669"/>
+    <!-- Card Backgrounds -->
+    <linearGradient id="chipBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.6"/>
     </linearGradient>
 
-    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#E879F9"/>
-      <stop offset="100%" stop-color="#A855F7"/>
+    <linearGradient id="editorBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1117"/>
+      <stop offset="100%" stop-color="#090D14"/>
     </linearGradient>
 
-    <linearGradient id="cyanBlueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#22D3EE"/>
-      <stop offset="100%" stop-color="#3B82F6"/>
+    <linearGradient id="tabActiveBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#161B22"/>
+      <stop offset="100%" stop-color="#1F2937"/>
     </linearGradient>
 
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.07)"/>
-      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)"/>
-    </linearGradient>
+    <!-- Filters -->
+    <filter id="subtleDropShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
 
-    <!-- Filters for Glow -->
-    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-
-    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
-      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
-    </filter>
   </defs>
 
-  <!-- Canvas Background -->
-  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)"/>
+  <!-- ==================== BASE CANVAS ==================== -->
+  <rect width="1200" height="380" rx="14" fill="url(#canvasBg)"/>
 
-  <!-- Radial Glow Lighting -->
-  <rect width="1200" height="360" rx="16" fill="url(#cyanGlow)"/>
-  <rect width="1200" height="360" rx="16" fill="url(#purpleGlow)"/>
-  <rect width="1200" height="360" rx="16" fill="url(#emeraldGlow)"/>
+  <!-- Designer Canvas Dot Matrix -->
+  <rect width="1200" height="380" rx="14" fill="url(#canvasDotGrid)"/>
 
-  <!-- Cyber Grid Lines Background (Subtle) -->
-  <g stroke="rgba(255, 255, 255, 0.04)" stroke-width="1">
-    <line x1="0" y1="60" x2="1200" y2="60"/>
-    <line x1="0" y1="120" x2="1200" y2="120"/>
-    <line x1="0" y1="180" x2="1200" y2="180"/>
-    <line x1="0" y1="240" x2="1200" y2="240"/>
-    <line x1="0" y1="300" x2="1200" y2="300"/>
+  <!-- Soft Atmospheric Glows -->
+  <rect width="1200" height="380" rx="14" fill="url(#indigoAmbient)"/>
+  <rect width="1200" height="380" rx="14" fill="url(#violetAmbient)"/>
+  <rect width="1200" height="380" rx="14" fill="url(#emeraldAmbient)"/>
 
-    <line x1="150" y1="0" x2="150" y2="360"/>
-    <line x1="300" y1="0" x2="300" y2="360"/>
-    <line x1="450" y1="0" x2="450" y2="360"/>
-    <line x1="600" y1="0" x2="600" y2="360"/>
-    <line x1="750" y1="0" x2="750" y2="360"/>
-    <line x1="900" y1="0" x2="900" y2="360"/>
-    <line x1="1050" y1="0" x2="1050" y2="360"/>
-  </g>
+  <!-- Top Accent Craft Line -->
+  <rect x="0" y="0" width="1200" height="3.5" rx="2" fill="url(#accentLineGrad)"/>
 
-  <!-- Border Frame Accent -->
-  <rect x="1" y="1" width="1198" height="358" rx="15" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
+  <!-- Frame Border -->
+  <rect x="1" y="1" width="1198" height="378" rx="13" fill="none" stroke="#334155" stroke-opacity="0.3" stroke-width="1.2"/>
 
-  <!-- Top Accent Neon Bar -->
-  <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 1184 0 C 1192.84 0 1200 7.16 1200 16 L 1200 4 L 0 4 Z" fill="url(#cyanBlueGrad)"/>
-
-  <!-- ==================== RIGHT SIDE: TECH / AI NETWORK VISUAL ==================== -->
-  <g transform="translate(980, 180)">
-    <!-- Outer Orbit Ring -->
-    <circle r="125" fill="none" stroke="rgba(168, 85, 247, 0.2)" stroke-width="1.5" stroke-dasharray="6 8"/>
-    <circle r="95" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
-    <circle r="65" fill="none" stroke="rgba(34, 211, 238, 0.35)" stroke-width="1" stroke-dasharray="4 6"/>
-    <circle r="35" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.5)" stroke-width="2"/>
+  <!-- ==================== LEFT PANE: HUMAN PROFILE & IDENTITY ==================== -->
+  
+  <!-- Status Chip: Real Human Indicator -->
+  <g transform="translate(56, 36)">
+    <!-- Pill Container -->
+    <rect width="380" height="28" rx="14" fill="#0F172A" fill-opacity="0.8" stroke="#059669" stroke-opacity="0.35" stroke-width="1"/>
     
-    <!-- Central AI Core Node -->
-    <circle r="16" fill="#38BDF8" filter="url(#glowFilter)"/>
-    <circle r="8" fill="#FFFFFF"/>
-
-    <!-- Neural Network Node Links -->
-    <line x1="0" y1="0" x2="60" y2="-45" stroke="rgba(56, 189, 248, 0.5)" stroke-width="1.5"/>
-    <line x1="0" y1="0" x2="-70" y2="-55" stroke="rgba(168, 85, 247, 0.5)" stroke-width="1.5"/>
-    <line x1="0" y1="0" x2="80" y2="40" stroke="rgba(52, 211, 153, 0.5)" stroke-width="1.5"/>
-    <line x1="0" y1="0" x2="-65" y2="50" stroke="rgba(244, 114, 182, 0.5)" stroke-width="1.5"/>
-    <line x1="0" y1="0" x2="-20" y2="-90" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1"/>
-    <line x1="0" y1="0" x2="35" y2="85" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1"/>
-
-    <!-- Interconnected Outer Links -->
-    <line x1="60" y1="-45" x2="80" y2="40" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
-    <line x1="-70" y1="-55" x2="-20" y2="-90" stroke="rgba(168, 85, 247, 0.3)" stroke-width="1"/>
-    <line x1="-65" y1="50" x2="35" y2="85" stroke="rgba(52, 211, 153, 0.3)" stroke-width="1"/>
-
-    <!-- Satellite Nodes with Glow -->
-    <circle cx="60" cy="-45" r="7" fill="#38BDF8" filter="url(#glowFilter)"/>
-    <circle cx="-70" cy="-55" r="8" fill="#C084FC" filter="url(#glowFilter)"/>
-    <circle cx="80" cy="40" r="7" fill="#34D399" filter="url(#glowFilter)"/>
-    <circle cx="-65" cy="50" r="6" fill="#F472B6" filter="url(#glowFilter)"/>
-    <circle cx="-20" cy="-90" r="5" fill="#38BDF8"/>
-    <circle cx="35" cy="85" r="5" fill="#A855F7"/>
-
-    <!-- Small Data Points -->
-    <circle cx="110" cy="-10" r="3" fill="#38BDF8" opacity="0.8"/>
-    <circle cx="-100" cy="15" r="3.5" fill="#C084FC" opacity="0.8"/>
-    <circle cx="-35" cy="105" r="2.5" fill="#34D399" opacity="0.8"/>
-    <circle cx="50" cy="-95" r="3" fill="#FCD34D" opacity="0.8"/>
-
-    <!-- Orbiting Code / Data Glyphs -->
-    <text x="68" y="-40" fill="#BAE6FD" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">AI / ML</text>
-    <text x="-120" y="-55" fill="#E9D5FF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">CV &amp; NLP</text>
-    <text x="75" y="60" fill="#A7F3D0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">ETL / BI</text>
-  </g>
-
-  <!-- ==================== LEFT & CENTER CONTENT ==================== -->
-
-  <!-- Top Pill: Status / Domain Badge -->
-  <g transform="translate(60, 42)">
-    <rect width="365" height="28" rx="14" fill="rgba(6, 182, 212, 0.12)" stroke="rgba(34, 211, 238, 0.4)" stroke-width="1"/>
-    <circle cx="14" cy="14" r="5" fill="#22D3EE" filter="url(#glowFilter)"/>
-    <text x="27" y="18" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5">
-      DATA SCIENTIST &amp; AI SPECIALIST
+    <!-- Pulsing Status Dot -->
+    <circle cx="16" cy="14" r="7" fill="#10B981" fill-opacity="0.25" class="pulse-beacon"/>
+    <circle cx="16" cy="14" r="4" fill="#34D399"/>
+    
+    <text x="32" y="18" fill="#A7F3D0" class="mono-text" font-size="11" font-weight="600" letter-spacing="0.8">
+      AVAILABLE FOR DATA SCIENCE &amp; AI ROLES
     </text>
   </g>
 
-  <!-- Candidate Name -->
-  <text x="60" y="118" fill="url(#nameGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" font-size="46" font-weight="900" letter-spacing="1">
-    CHAITANYA MEDAM
-  </text>
-
-  <!-- Colorful Multi-Role Tagline -->
-  <g transform="translate(60, 154)">
-    <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="700" letter-spacing="0.5">
-      <tspan fill="#38BDF8">DATA SCIENTIST</tspan>
-      <tspan fill="#64748B" font-weight="400">  ✦  </tspan>
-      <tspan fill="#C084FC">AI ENGINEER</tspan>
-      <tspan fill="#64748B" font-weight="400">  ✦  </tspan>
-      <tspan fill="#34D399">ML RESEARCHER</tspan>
-      <tspan fill="#64748B" font-weight="400">  ✦  </tspan>
-      <tspan fill="#F472B6">BI ARCHITECT</tspan>
+  <!-- Friendly Introduction -->
+  <g transform="translate(56, 92)">
+    <text fill="#94A3B8" class="sans-text" font-size="14.5" font-weight="500" letter-spacing="0.5">
+      Hi there, I'm <tspan fill="#F8FAFC" font-weight="600">Chaitanya</tspan> 👋
     </text>
   </g>
 
-  <!-- Short Impact Narrative -->
-  <text x="60" y="185" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="400">
-    Transforming telemetry &amp; unstructured data into high-performance AI models, production ETL &amp; actionable BI intelligence.
-  </text>
-
-  <!-- ==================== HIGHLIGHT PILLS / STAT CARDS ==================== -->
-  <g transform="translate(60, 212)">
-
-    <!-- Card 1: Research Publications -->
-    <g transform="translate(0, 0)" filter="url(#cardShadow)">
-      <rect width="180" height="52" rx="10" fill="url(#cardGrad)" stroke="rgba(245, 158, 11, 0.45)" stroke-width="1.2"/>
-      <circle cx="24" cy="26" r="12" fill="rgba(245, 158, 11, 0.15)"/>
-      <text x="24" y="30" text-anchor="middle" font-size="14">📚</text>
-      <text x="44" y="21" fill="url(#goldGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800">4x Research</text>
-      <text x="44" y="38" fill="#FDE68A" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="500">IEEE &amp; Scopus</text>
-    </g>
-
-    <!-- Card 2: Industry / Continental -->
-    <g transform="translate(192, 0)" filter="url(#cardShadow)">
-      <rect width="180" height="52" rx="10" fill="url(#cardGrad)" stroke="rgba(56, 189, 248, 0.45)" stroke-width="1.2"/>
-      <circle cx="24" cy="26" r="12" fill="rgba(56, 189, 248, 0.15)"/>
-      <text x="24" y="30" text-anchor="middle" font-size="14">🚗</text>
-      <text x="44" y="21" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800">Continental</text>
-      <text x="44" y="38" fill="#BAE6FD" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="500">Autonomous Mobility</text>
-    </g>
-
-    <!-- Card 3: ETL & Reliability -->
-    <g transform="translate(384, 0)" filter="url(#cardShadow)">
-      <rect width="180" height="52" rx="10" fill="url(#cardGrad)" stroke="rgba(16, 185, 129, 0.45)" stroke-width="1.2"/>
-      <circle cx="24" cy="26" r="12" fill="rgba(16, 185, 129, 0.15)"/>
-      <text x="24" y="30" text-anchor="middle" font-size="14">⚡</text>
-      <text x="44" y="21" fill="url(#emeraldGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800">-60% Manual ETL</text>
-      <text x="44" y="38" fill="#A7F3D0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="500">95% Reliability</text>
-    </g>
-
-    <!-- Card 4: Domains -->
-    <g transform="translate(576, 0)" filter="url(#cardShadow)">
-      <rect width="180" height="52" rx="10" fill="url(#cardGrad)" stroke="rgba(168, 85, 247, 0.45)" stroke-width="1.2"/>
-      <circle cx="24" cy="26" r="12" fill="rgba(168, 85, 247, 0.15)"/>
-      <text x="24" y="30" text-anchor="middle" font-size="14">🧠</text>
-      <text x="44" y="21" fill="url(#purpleGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800">CV &amp; GenAI</text>
-      <text x="44" y="38" fill="#DDD6FE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="500">Deep Learning &amp; NLP</text>
-    </g>
-
+  <!-- Name Heading -->
+  <g transform="translate(56, 136)">
+    <text fill="url(#textPrimaryGrad)" class="sans-text" font-size="44" font-weight="900" letter-spacing="-0.5">
+      CHAITANYA MEDAM
+    </text>
   </g>
 
-  <!-- ==================== BOTTOM TECH BADGE PILLS ==================== -->
-  <g transform="translate(60, 288)">
-    <text x="0" y="22" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1">CORE STACK:</text>
-    
-    <!-- Python -->
-    <g transform="translate(90, 4)">
-      <rect width="78" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <circle cx="12" cy="13" r="4" fill="#38BDF8"/>
-      <text x="24" y="17" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">Python</text>
+  <!-- Human Role Line & Clean Tags -->
+  <g transform="translate(56, 172)">
+    <!-- Role Tags -->
+    <rect x="0" y="0" width="124" height="24" rx="6" fill="#1E293B" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1"/>
+    <text x="62" y="16" text-anchor="middle" fill="#38BDF8" class="mono-text" font-size="11" font-weight="600">Data Scientist</text>
+
+    <rect x="132" y="0" width="112" height="24" rx="6" fill="#1E293B" stroke="#C084FC" stroke-opacity="0.4" stroke-width="1"/>
+    <text x="188" y="16" text-anchor="middle" fill="#C084FC" class="mono-text" font-size="11" font-weight="600">AI Engineer</text>
+
+    <rect x="252" y="0" width="138" height="24" rx="6" fill="#1E293B" stroke="#34D399" stroke-opacity="0.4" stroke-width="1"/>
+    <text x="321" y="16" text-anchor="middle" fill="#34D399" class="mono-text" font-size="11" font-weight="600">4x IEEE Author</text>
+
+    <rect x="398" y="0" width="126" height="24" rx="6" fill="#1E293B" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1"/>
+    <text x="461" y="16" text-anchor="middle" fill="#FDE047" class="mono-text" font-size="11" font-weight="600">Bangalore, IN</text>
+  </g>
+
+  <!-- Human Bio / Philosophy -->
+  <g transform="translate(56, 218)">
+    <text fill="#94A3B8" class="sans-text" font-size="13.5" font-weight="400" line-height="22">
+      <tspan x="0" y="0">Building production-grade deep learning models, real-time autonomous vehicle</tspan>
+      <tspan x="0" y="21">telemetry, and high-reliability data pipelines that solve practical engineering challenges.</tspan>
+    </text>
+  </g>
+
+  <!-- 3 Authentic Proof-of-Work Canvas Cards -->
+  <g transform="translate(56, 268)">
+    <!-- Card 1: Publications -->
+    <g transform="translate(0, 0)">
+      <rect width="168" height="68" rx="10" fill="url(#chipBg)" stroke="#334155" stroke-opacity="0.6" stroke-width="1"/>
+      <rect x="10" y="10" width="28" height="28" rx="6" fill="#7C3AED" fill-opacity="0.2"/>
+      <text x="24" y="29" text-anchor="middle" font-size="14">📚</text>
+      <text x="46" y="24" fill="#F1F5F9" class="sans-text" font-size="12" font-weight="700">4x Research</text>
+      <text x="46" y="38" fill="#A78BFA" class="mono-text" font-size="10" font-weight="500">IEEE &amp; Scopus</text>
+      <text x="12" y="58" fill="#64748B" class="sans-text" font-size="10.5">YOLO • NLP • Sensors</text>
     </g>
 
-    <!-- PyTorch -->
-    <g transform="translate(176, 4)">
-      <rect width="84" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <circle cx="12" cy="13" r="4" fill="#EE4C2C"/>
-      <text x="24" y="17" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">PyTorch</text>
+    <!-- Card 2: Continental Mobility -->
+    <g transform="translate(180, 0)">
+      <rect width="176" height="68" rx="10" fill="url(#chipBg)" stroke="#334155" stroke-opacity="0.6" stroke-width="1"/>
+      <rect x="10" y="10" width="28" height="28" rx="6" fill="#0284C7" fill-opacity="0.2"/>
+      <text x="24" y="29" text-anchor="middle" font-size="14">🚗</text>
+      <text x="46" y="24" fill="#F1F5F9" class="sans-text" font-size="12" font-weight="700">Continental</text>
+      <text x="46" y="38" fill="#38BDF8" class="mono-text" font-size="10" font-weight="500">Autonomous Mobility</text>
+      <text x="12" y="58" fill="#64748B" class="sans-text" font-size="10.5">-60% ETL • 95% Uptime</text>
     </g>
 
-    <!-- TensorFlow -->
-    <g transform="translate(268, 4)">
-      <rect width="102" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <circle cx="12" cy="13" r="4" fill="#FF6F00"/>
-      <text x="24" y="17" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">TensorFlow</text>
+    <!-- Card 3: Stack Focus -->
+    <g transform="translate(368, 0)">
+      <rect width="164" height="68" rx="10" fill="url(#chipBg)" stroke="#334155" stroke-opacity="0.6" stroke-width="1"/>
+      <rect x="10" y="10" width="28" height="28" rx="6" fill="#059669" fill-opacity="0.2"/>
+      <text x="24" y="29" text-anchor="middle" font-size="14">⚡</text>
+      <text x="46" y="24" fill="#F1F5F9" class="sans-text" font-size="12" font-weight="700">Core Craft</text>
+      <text x="46" y="38" fill="#34D399" class="mono-text" font-size="10" font-weight="500">PyTorch &amp; Vision</text>
+      <text x="12" y="58" fill="#64748B" class="sans-text" font-size="10.5">Transformers • BI</text>
+    </g>
+  </g>
+
+  <!-- ==================== RIGHT PANE: DEVELOPER STUDIO CODE CANVAS ==================== -->
+  <g transform="translate(620, 32)" filter="url(#subtleDropShadow)">
+    <!-- Code Editor Card Window Frame -->
+    <rect width="524" height="316" rx="12" fill="url(#editorBg)" stroke="#38BDF8" stroke-opacity="0.25" stroke-width="1.2" class="glow-border"/>
+
+    <!-- Window Title Bar -->
+    <path d="M 0 12 C 0 5.37 5.37 0 12 0 L 512 0 C 518.63 0 524 5.37 524 12 L 524 38 L 0 38 Z" fill="#161B22"/>
+    <line x1="0" y1="38" x2="524" y2="38" stroke="#30363D" stroke-width="1"/>
+
+    <!-- macOS Traffic Light Buttons -->
+    <circle cx="20" cy="19" r="5.5" fill="#EF4444" fill-opacity="0.9"/>
+    <circle cx="38" cy="19" r="5.5" fill="#F59E0B" fill-opacity="0.9"/>
+    <circle cx="56" cy="19" r="5.5" fill="#10B981" fill-opacity="0.9"/>
+
+    <!-- Active Tab: chaitanya_engineer.py -->
+    <g transform="translate(86, 7)">
+      <rect width="190" height="31" rx="6" fill="url(#tabActiveBg)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1"/>
+      <!-- Python Mini Icon -->
+      <circle cx="16" cy="15.5" r="4.5" fill="#38BDF8" fill-opacity="0.3"/>
+      <text x="16" y="19" text-anchor="middle" font-size="9" fill="#38BDF8">py</text>
+      <text x="32" y="20" fill="#E2E8F0" class="mono-text" font-size="11.5" font-weight="600">chaitanya_core.py</text>
+      <!-- Close icon on tab -->
+      <text x="175" y="19" fill="#64748B" class="mono-text" font-size="11">×</text>
     </g>
 
-    <!-- OpenCV -->
-    <g transform="translate(378, 4)">
-      <rect width="84" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <circle cx="12" cy="13" r="4" fill="#5C3EE8"/>
-      <text x="24" y="17" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">OpenCV</text>
+    <!-- Branch Indicator on Titlebar -->
+    <g transform="translate(420, 12)">
+      <text fill="#64748B" class="mono-text" font-size="10.5">⎇ main</text>
+      <circle cx="48" cy="7" r="3" fill="#10B981"/>
     </g>
 
-    <!-- SQL -->
-    <g transform="translate(470, 4)">
-      <rect width="66" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <circle cx="12" cy="13" r="4" fill="#4479A1"/>
-      <text x="24" y="17" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">SQL</text>
+    <!-- Code Editor Body -->
+    <g transform="translate(18, 54)">
+      <!-- Line Numbers Column -->
+      <g fill="#4B5563" class="mono-text" font-size="11" text-anchor="end">
+        <text x="18" y="14">01</text>
+        <text x="18" y="32">02</text>
+        <text x="18" y="50">03</text>
+        <text x="18" y="68">04</text>
+        <text x="18" y="86">05</text>
+        <text x="18" y="104">06</text>
+        <text x="18" y="122">07</text>
+        <text x="18" y="140">08</text>
+        <text x="18" y="158">09</text>
+        <text x="18" y="176">10</text>
+        <text x="18" y="194">11</text>
+        <text x="18" y="212">12</text>
+      </g>
+
+      <!-- Code Line Content (Readable, authentic Python) -->
+      <g transform="translate(34, 0)" class="mono-text" font-size="11.5">
+        <!-- Line 1: Comment -->
+        <text x="0" y="14" fill="#6B7280" font-style="italic"># Chaitanya Medam • Data Scientist &amp; AI Engineer</text>
+
+        <!-- Line 2: Imports -->
+        <text x="0" y="32">
+          <tspan fill="#C678DD">from</tspan>
+          <tspan fill="#E2E8F0"> deep_learning </tspan>
+          <tspan fill="#C678DD">import</tspan>
+          <tspan fill="#61AFEF"> Vision, NLP, ETL</tspan>
+        </text>
+
+        <!-- Line 3: Class Definition -->
+        <text x="0" y="50">
+          <tspan fill="#C678DD">class</tspan>
+          <tspan fill="#E5C07B"> CandidateProfile</tspan>
+          <tspan fill="#ABB2BF">:</tspan>
+        </text>
+
+        <!-- Line 4: Education -->
+        <text x="16" y="68">
+          <tspan fill="#E06C75">degree</tspan>
+          <tspan fill="#56B6C2"> = </tspan>
+          <tspan fill="#98C379">"M.Tech (Integrated) CSE @ VIT"</tspan>
+        </text>
+
+        <!-- Line 5: Research -->
+        <text x="16" y="86">
+          <tspan fill="#E06C75">papers</tspan>
+          <tspan fill="#56B6C2"> = </tspan>
+          <tspan fill="#ABB2BF">[</tspan>
+          <tspan fill="#D19A66">4</tspan>
+          <tspan fill="#ABB2BF">]  </tspan>
+          <tspan fill="#5C6370" font-style="italic"># IEEE Xplore &amp; Scopus Indexed</tspan>
+        </text>
+
+        <!-- Line 6: Industry Impact -->
+        <text x="16" y="104">
+          <tspan fill="#E06C75">impact</tspan>
+          <tspan fill="#56B6C2"> = </tspan>
+          <tspan fill="#ABB2BF">{</tspan>
+          <tspan fill="#98C379">"etl_reduction"</tspan>
+          <tspan fill="#ABB2BF">: </tspan>
+          <tspan fill="#98C379">"-60%"</tspan>
+          <tspan fill="#ABB2BF">, </tspan>
+          <tspan fill="#98C379">"uptime"</tspan>
+          <tspan fill="#ABB2BF">: </tspan>
+          <tspan fill="#98C379">"95%"</tspan>
+          <tspan fill="#ABB2BF">}</tspan>
+        </text>
+
+        <!-- Line 7: Core Tech -->
+        <text x="16" y="122">
+          <tspan fill="#E06C75">stack </tspan>
+          <tspan fill="#56B6C2"> = </tspan>
+          <tspan fill="#ABB2BF">[</tspan>
+          <tspan fill="#98C379">"PyTorch"</tspan>
+          <tspan fill="#ABB2BF">, </tspan>
+          <tspan fill="#98C379">"YOLO"</tspan>
+          <tspan fill="#ABB2BF">, </tspan>
+          <tspan fill="#98C379">"Power BI"</tspan>
+          <tspan fill="#ABB2BF">]</tspan>
+        </text>
+
+        <!-- Line 8: Method -->
+        <text x="16" y="140">
+          <tspan fill="#C678DD">def</tspan>
+          <tspan fill="#61AFEF"> build_solution</tspan>
+          <tspan fill="#ABB2BF">(self, data):</tspan>
+        </text>
+
+        <!-- Line 9: Return -->
+        <text x="32" y="158">
+          <tspan fill="#C678DD">return</tspan>
+          <tspan fill="#E5C07B"> ProductionSystem</tspan>
+          <tspan fill="#ABB2BF">(data, reliable=</tspan>
+          <tspan fill="#D19A66">True</tspan>
+          <tspan fill="#ABB2BF">)</tspan>
+        </text>
+
+        <!-- Line 10: Blank Line / Spacing -->
+
+        <!-- Line 11: Invocation Prompt -->
+        <text x="0" y="194">
+          <tspan fill="#61AFEF">chaitu</tspan>
+          <tspan fill="#ABB2BF"> = </tspan>
+          <tspan fill="#E5C07B">CandidateProfile</tspan>
+          <tspan fill="#ABB2BF">()</tspan>
+        </text>
+
+        <!-- Line 12: Active Terminal Line with Blinking Cursor -->
+        <text x="0" y="212">
+          <tspan fill="#6B7280">&gt;&gt;&gt; </tspan>
+          <tspan fill="#34D399">chaitu.build_solution</tspan>
+          <tspan fill="#ABB2BF">(telemetry)</tspan>
+        </text>
+
+        <!-- Blinking Terminal Cursor -->
+        <rect x="258" y="200" width="8" height="15" rx="1.5" fill="#38BDF8" class="cursor"/>
+      </g>
     </g>
 
-    <!-- Power BI -->
-    <g transform="translate(544, 4)">
-      <rect width="90" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <circle cx="12" cy="13" r="4" fill="#F2C811"/>
-      <text x="24" y="17" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">Power BI</text>
+    <!-- Editor Status Bar Footer -->
+    <g transform="translate(0, 288)">
+      <rect width="524" height="28" rx="0" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+      <path d="M 0 28 L 0 16 C 0 22 6 28 12 28 Z" fill="#0D1117"/>
+      <path d="M 524 28 L 524 16 C 524 22 518 28 512 28 Z" fill="#0D1117"/>
+
+      <!-- Footer Info Chips -->
+      <g transform="translate(16, 18)" class="mono-text" font-size="10.5">
+        <circle cx="4" cy="-4" r="3" fill="#10B981"/>
+        <text x="12" y="0" fill="#94A3B8">Python 3.11</text>
+        <text x="96" y="0" fill="#64748B">|</text>
+        <text x="108" y="0" fill="#94A3B8">UTF-8</text>
+        <text x="156" y="0" fill="#64748B">|</text>
+        <text x="168" y="0" fill="#94A3B8">Spaces: 4</text>
+        <text x="240" y="0" fill="#64748B">|</text>
+        <text x="252" y="0" fill="#38BDF8">Autonomous Mobility ✓</text>
+        <text x="430" y="0" fill="#A78BFA" font-weight="600">Ln 12, Col 34</text>
+      </g>
     </g>
 
-    <!-- Streamlit -->
-    <g transform="translate(642, 4)">
-      <rect width="90" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <circle cx="12" cy="13" r="4" fill="#FF4B4B"/>
-      <text x="24" y="17" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">Streamlit</text>
-    </g>
-
-    <!-- Transformers -->
-    <g transform="translate(740, 4)">
-      <rect width="115" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-      <circle cx="12" cy="13" r="4" fill="#FFD21E"/>
-      <text x="24" y="17" fill="#F1F5F9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">Transformers</text>
-    </g>
   </g>
 
 </svg>
