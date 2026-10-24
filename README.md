@@ -10,14 +10,7 @@
 <!-- Dynamic Multi-Color Typing Animation -->
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=1000&color=00F2FE&center=true&vCenter=true&width=800&lines=%F0%9F%9A%80+Data+Scientist+%7C+AI+Engineer+%7C+ML+Researcher;%F0%9F%93%9A+Author+of+4x+IEEE+%26+Scopus+Indexed+Research+Papers;%F0%9F%A7%A0+Computer+Vision+%E2%80%A2+Deep+Learning+%E2%80%A2+NLP+%E2%80%A2+LLMs;%E2%9A%A1+Automated+ETL+Pipelines+%E2%80%A2+Power+BI+Dashboards)](https://git.io/typing-svg)
 
-<p align="center">
-  <a href="https://linkedin.com/in/chaitanya-medam"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="mailto:medamchaitanya321@gmail.com"><img src="https://img.shields.io/badge/Email-Get%20in%20Touch-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-  <a href="https://github.com/ChaituCR07"><img src="https://img.shields.io/badge/GitHub-ChaituCR07-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
-  <img src="https://img.shields.io/badge/Location-Bangalore%2C%20India-009688?style=for-the-badge&logo=google-maps&logoColor=white" alt="Location" />
-</p>
-
----
+<br/>
 
 <!-- Key Highlights / Metrics Counter Bar -->
 <table align="center">
@@ -221,15 +214,6 @@ I am a **Data Scientist & AI Engineer** with over 2 years of experience developi
     <img src="https://streak-stats.demolab.com/?user=ChaituCR07&theme=radical&hide_border=true&stroke=21262D&ring=FF5E3A&fire=FF5E3A&background=0D1117&currStreakLabel=38BDF8&sideLabels=8B949E&dates=94A3B8&currStreakNum=FFAE00&sideNums=38BDF8&border_radius=10&timezone=Asia/Kolkata" alt="GitHub Streak Stats" />
   </a>
 
-  <br/><br/>
-
-  <!-- 🐍 Animated Contribution Grid Snake Game -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/github-contribution-grid-snake.svg">
-    <img src="./assets/github-contribution-grid-snake-dark.svg" alt="Contribution Grid Snake Animation" width="95%" />
-  </picture>
-
 </div>
 
 ---
@@ -243,11 +227,12 @@ I am always keen to discuss machine learning research, data engineering challeng
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Chaitanya_Medam-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/chaitanya-medam)
 [![Email](https://img.shields.io/badge/Email-medamchaitanya321%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:medamchaitanya321@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-@ChaituCR07-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ChaituCR07)
+![Location](https://img.shields.io/badge/Location-Bangalore%2C%20India-009688?style=for-the-badge&logo=google-maps&logoColor=white)
 
-<br/>
+<br/><br/>
 
 ![Profile Views](https://komarev.com/ghpvc/?username=ChaituCR07&label=Profile%20Views&color=2E90FA&style=flat-square)
 
-⭐ *Feel free to explore my repositories — if you find something exiting or interesting, give it a star!*
+⭐ *Feel free to explore my repositories — if you find something exciting or interesting, give it a star!*
 
 </div>
