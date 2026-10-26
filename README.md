@@ -10,9 +10,8 @@
 <!-- Dynamic Multi-Color Typing Animation -->
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=1000&color=00F2FE&center=true&vCenter=true&width=800&lines=%F0%9F%9A%80+Data+Scientist+%7C+AI+Engineer+%7C+ML+Researcher;%F0%9F%93%9A+Author+of+4x+IEEE+%26+Scopus+Indexed+Research+Papers;%F0%9F%A7%A0+Computer+Vision+%E2%80%A2+Deep+Learning+%E2%80%A2+NLP+%E2%80%A2+LLMs;%E2%9A%A1+Automated+ETL+Pipelines+%E2%80%A2+Power+BI+Dashboards)](https://git.io/typing-svg)
 
-<br/>
-
 </div>
+
 ---
 
 ## 📌 Executive Summary
