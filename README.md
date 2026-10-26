@@ -12,17 +12,6 @@
 
 <br/>
 
-<!-- Key Highlights / Metrics Counter Bar -->
-<table align="center">
-  <tr>
-    <td align="center">💼 <b>Experience</b><br><b>2+ Years</b></td>
-    <td align="center">📚 <b>Publications</b><br><b>4 Papers (IEEE & Scopus)</b></td>
-    <td align="center">⚡ <b>ETL Efficiency</b><br><b>-60% Manual Effort</b></td>
-    <td align="center">🎯 <b>Reliability & Accuracy</b><br><b>Up to 95%</b></td>
-  </tr>
-</table>
-
-</div>
 
 ---
 
